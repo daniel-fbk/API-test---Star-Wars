@@ -5,29 +5,65 @@
 
 body {
   background-image: url(images/background.jpg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem 0;
 }
 
 h1,
 h2,
 p {
-  color: yellow;
+  color: #f2de26;
 }
 
 button {
   cursor: pointer;
   height: 2rem;
+  margin: 2rem;
+  background-color: #f2de26;
+  border: none;
+}
+
+button:active {
+  background-color: #9f9116;
+  scale: 0.9;
 }
 
 .card {
   width: 40rem;
   height: 25rem;
-  display: flex;
 }
 
 .card {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-areas: "character-name p", "character-image p";
+  grid-template-areas:
+    "character-name character-name"
+    "character-image character-height"
+    "character-image character-species"
+    "character-image character-home-world"
+    "character-image character-affiliations";
+}
+
+.character-name {
+  grid-area: character-name;
+}
+
+.character-image {
+  grid-area: character-image;
+}
+
+.character-height {
+  grid-area: character-height;
+}
+
+.character-species {
+  grid-area: character-species;
+}
+
+.character-home-world {
+  grid-area: character-home-world;
 }
 
 .card {
@@ -56,5 +92,5 @@ button {
 }
 
 .character-image {
-  width: 50%;
+  max-width: 75%;
 }
